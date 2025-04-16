@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VORTTEAM GITHUB LICENSE VERSION 1.0</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://site-assets.fontawesome.com/releases/v6.7.2/css/all.css">
+    <meta name="description" content="VORTTEAM GITHUB LICENSE VERSION 1.0 - Official license for VortTeam software hosted on GitHub.">
+    <meta name="keywords" content="VORTTEAM, License, GitHub, Open Source, Software">
+    <meta name="author" content="VortTeam">
+
+    <style>
+        :root {
+            --primary: hsl(215, 100%, 40%);
+            --primary-dark: hsl(215, 100%, 30%);
+            --background: #121212;
+            --surface: #1e1e1e;
+            --text: #ffffff;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Roboto', sans-serif;
+            background-color: var(--background);
+            color: var(--text);
+            line-height: 1.6;
+        }
+
+        header {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background-color: var(--surface);
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            z-index: 1000;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 1.5rem;
+        }
+
+        nav a {
+            color: var(--text);
+            text-decoration: none;
+            font-size: 1rem;
+            transition: color 0.3s ease;
+        }
+
+        nav a:hover {
+            color: var(--primary);
+        }
+
+        main {
+            padding: 6rem 2rem 2rem;
+            max-width: 800px;
+            margin: 0 auto;
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.5s ease, transform 0.5s ease;
+        }
+
+        main.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            text-align: center;
+            margin-bottom: 0.5rem;
+        }
+
+        h2 {
+            font-size: 1.5rem;
+            text-align: center;
+            margin-bottom: 1.5rem;
+            color: #aaa;
+        }
+
+        .license-container {
+            background-color: var(--surface);
+            padding: 2rem;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+            margin-bottom: 2rem;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .license-container:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 6px 8px rgba(0, 0, 0, 0.3);
+        }
+
+        pre {
+            white-space: pre-wrap;
+            font-size: 1rem;
+            line-height: 1.8;
+            text-align: left;
+        }
+
+        .btn {
+            background-color: var(--primary);
+            color: var(--text);
+            padding: 0.5rem 1.5rem;
+            text-decoration: none;
+            border-radius: 4px;
+            font-size: 1rem;
+            transition: background-color 0.3s ease;
+            display: inline-block;
+            margin-top: 1rem;
+        }
+
+        .btn:hover {
+            background-color: var(--primary-dark);
+        }
+
+        .links-container {
+            display: flex;
+            gap: 1.5rem;
+            justify-content: center;
+            margin-top: 1.5rem;
+        }
+
+        .links-container a {
+            color: var(--text);
+            font-size: 2rem;
+            transition: transform 0.3s ease, color 0.3s ease;
+        }
+
+        .links-container a:hover {
+            transform: scale(1.1);
+            color: var(--primary);
+        }
+
+        footer {
+            background-color: var(--surface);
+            padding: 1rem;
+            text-align: center;
+            font-size: 0.8rem;
+            color: #aaa;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @media (max-width: 768px) {
+            header {
+                flex-direction: column;
+                padding: 1rem;
+                gap: 1rem;
+            }
+
+            nav ul {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            h1 {
+                font-size: 2rem;
+            }
+
+            h2 {
+                font-size: 1.2rem;
+            }
+
+            .license-container {
+                padding: 1.5rem;
+            }
+
+            pre {
+                font-size: 0.9rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="logo">VortTeam</div>
+        <nav>
+            <ul>
+                <li><a href="https://vortteam.com">Home</a></li>
+                <li><a href="https://github.com/vortteam">GitHub</a></li>
+                <li><a href="mailto:contact@vortteam.com">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <h1>VORTTEAM GITHUB LICENSE VERSION 1.0</h1>
+        <h2>Effective April 16, 2025</h2>
+        <div class="license-container">
+            <pre>
+VORTTEAM GITHUB LICENSE VERSION 1.0, APRIL 16, 2025
+
+Copyright (c) 2025 VortTeam
+
+Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to use, copy, modify, and share the Software, subject to the following conditions:
+
+1. ATTRIBUTION REQUIRED Any copies, modifications, or redistributions of the Software, in whole or in part, must retain clear and visible credit to the original author, and include a notice that it was copied or based on work by the original author.
+
+2. COMMERCIAL USE RESTRICTED TO CREATOR Only the creator of the Software may sell, license, sublicense, or otherwise monetize the Software in any form, including but not limited to paid access, advertising-based platforms, or integration into commercial products or services. All other users are prohibited from any commercial use of the Software.
+
+3. PROHIBITED USES The Software may not be used a. For any unlawful purpose or in violation of any applicable laws or regulations b. In any manner that infringes the rights, including intellectual property rights, of others c. To engage in, support, or facilitate any form of harassment, abuse, surveillance, or harm to individuals or communities.
+
+4. ARTIFICIAL INTELLIGENCE AND MACHINE LEARNING The Software and its contents may not be used, in whole or in part, to train, fine-tune, or otherwise enhance machine learning or artificial intelligence models by individuals or automated systems accessing the repository, except as permitted below. The platform hosting the Software (currently GitHub) is permitted to use the Software for commercial machine learning purposes, provided that such use includes clear and visible attribution to the original author in any resulting models, datasets, or derivative works. Other than the hosting platform, use of the Software for machine learning or artificial intelligence purposes is permitted solely for non-commercial, research, or educational purposes. Commercial model training and dataset harvesting by any other entities or individuals, except the creator (VortTeam), are strictly prohibited.
+
+5. PRIVACY AND DATA PROTECTION Users of the Software must comply with all applicable data protection laws, including the General Data Protection Regulation (GDPR) where applicable. The Software may not include tracking, analytics, telemetry, or data collection mechanisms without the informed, active, and revocable consent of the end user.
+
+6. PRESERVATION OF ATTRIBUTION Redistributions or modified versions of the Software must not remove or obscure the original attribution to the author. Any files or repositories that include parts of the Software must clearly state the original author's name and that the code was copied or adapted from the original.
+
+7. NO WARRANTY THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE, AND NON-INFRINGEMENT. IN NO EVENT SHALL THE AUTHOR OR COPYRIGHT HOLDER BE LIABLE FOR ANY CLAIM, DAMAGES, OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT, OR OTHERWISE, ARISING FROM, OUT OF, OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+
+8. HOSTING PLATFORM The Software is currently hosted on GitHub. Any use of the Software by the hosting platform must comply with the terms of this license, including the attribution requirements and the specific provisions for commercial machine learning use outlined in Section 4.
+
+END OF TERMS AND CONDITIONS
+
+This license is available at https://vorttean.com/licenses/vortteam-github-license-v1
+            </pre>
+        </div>
+        <p>
+            This is the authoritative version of the VORTTEAM GITHUB LICENSE. For inquiries, please contact 
+            <a href="mailto:contact@vortteam.com" class="btn">contact@vortteam.com</a>.
+        </p>
+        <div class="links-container">
+            <a href="https://github.com/vortteam" target="_blank" title="Visit VortTeam on GitHub"><i class="fab fa-github"></i></a>
+            <a href="mailto:contact@vortteam.com" title="Contact VortTeam"><i class="fas fa-envelope"></i></a>
+        </div>
+    </main>
+
+    <footer>
+        <p>© 2025 VortTeam. All rights reserved.</p>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const main = document.querySelector('main');
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach((entry) => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('visible');
+                    } else {
+                        entry.target.classList.remove('visible');
+                    }
+                });
+            }, { threshold: 0.3 });
+            observer.observe(main);
+        });
+    </script>
+</body>
+</html>
