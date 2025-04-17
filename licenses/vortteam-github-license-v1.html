@@ -10,265 +10,211 @@
     <meta name="keywords" content="VORTTEAM, License, GitHub, Open Source, Software">
     <meta name="author" content="VortTeam">
 
-<style>
-    :root {
-        --primary: hsl(215, 100%, 40%);
-        --primary-dark: hsl(215, 100%, 30%);
-        --background: #121212;
-        --surface: #1e1e1e;
-        --text: #ffffff;
-    }
-
-    * {
-        margin: 0;
-        padding: 0;
-        box-sizing: border-box;
-    }
-
-    body {
-        font-family: 'Roboto', sans-serif;
-        background-color: var(--background);
-        color: var(--text);
-        line-height: 1.6;
-    }
-
-    header {
-        position: fixed;
-        top: 0;
-        width: 100%;
-        background-color: var(--surface);
-        padding: 1rem 2rem;
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        z-index: 1000;
-        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
-    }
-
-    .logo {
-        font-size: 1.5rem;
-        font-weight: 700;
-    }
-
-    nav ul {
-        list-style: none;
-        display: flex;
-        gap: 1.5rem;
-    }
-
-    nav a {
-        color: var(--text);
-        text-decoration: none;
-        font-size: 1rem;
-        transition: color 0.3s ease;
-    }
-
-    nav a:hover {
-        color: var(--primary);
-    }
-
-    main {
-        padding: 6rem 1rem 2rem;
-        max-width: 800px;
-        margin: 0 auto;
-        opacity: 0;
-        transform: translateY(20px);
-        transition: opacity 0.5s ease, transform 0.5s ease;
-    }
-
-    main.visible {
-        opacity: 1;
-        transform: translateY(0);
-    }
-
-    h1 {
-        font-size: 2.5rem;
-        text-align: center;
-        margin-bottom: 0.5rem;
-    }
-
-    h2 {
-        font-size: 1.5rem;
-        text-align: center;
-        margin-bottom: 1.5rem;
-        color: #aaa;
-    }
-
-    .license-container {
-        background-color: var(--surface);
-        padding: 2rem;
-        border-radius: 8px;
-        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
-        margin-bottom: 2rem;
-        transition: transform 0.3s ease, box-shadow 0.3s ease;
-    }
-
-    .license-container:hover {
-        transform: translateY(-5px);
-        box-shadow: 0 6px 8px rgba(0, 0, 0, 0.3);
-    }
-
-    pre {
-        white-space: pre-wrap;
-        font-size: 1rem;
-        line-height: 1.8;
-        text-align: left;
-    }
-
-    .btn {
-        background-color: var(--primary);
-        color: var(--text);
-        padding: 0.75rem 1.5rem;
-        text-decoration: none;
-        border-radius: 4px;
-        font-size: 1rem;
-        transition: background-color 0.3s ease;
-        display: inline-block;
-        margin-top: 1rem;
-        min-width: 120px;
-        text-align: center;
-    }
-
-    .btn:hover {
-        background-color: var(--primary-dark);
-    }
-
-    .links-container {
-        display: flex;
-        gap: 1.5rem;
-        justify-content: center;
-        margin-top: 1.5rem;
-    }
-
-    .links-container a {
-        color: var(--text);
-        font-size: 2rem;
-        transition: transform 0.3s ease, color 0.3s ease;
-    }
-
-    .links-container a:hover {
-        transform: scale(1.1);
-        color: var(--primary);
-    }
-
-    footer {
-        background-color: var(--surface);
-        padding: 1rem;
-        text-align: center;
-        font-size: 0.8rem;
-        color: #aaa;
-    }
-
-    @keyframes fadeIn {
-        from {
-            opacity: 0;
-            transform: translateY(20px);
-        }
-        to {
-            opacity: 1;
-            transform: translateY(0);
-        }
-    }
-
-    @media (max-width: 768px) {
-        header {
-            flex-direction: column;
-            padding: 1rem;
-            gap: 1rem;
+    <style>
+        :root {
+            --primary: hsl(215, 100%, 40%);
+            --primary-dark: hsl(215, 100%, 30%);
+            --background: #121212;
+            --surface: #1e1e1e;
+            --text: #ffffff;
         }
 
-        nav ul {
-            flex-direction: column;
-            align-items: center;
-            gap: 1rem;
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
         }
 
-        nav a {
-            font-size: 1.1rem;
-            padding: 0.5rem;
-        }
-
-        h1 {
-            font-size: 2rem;
-        }
-
-        h2 {
-            font-size: 1.2rem;
-        }
-
-        .license-container {
-            padding: 1.5rem;
-        }
-
-        pre {
-            font-size: 0.9rem;
-        }
-
-        .btn {
-            padding: 0.75rem 1.25rem;
-            font-size: 0.9rem;
-        }
-
-        .links-container a {
-            font-size: 1.8rem;
-        }
-    }
-
-    @media (max-width: 480px) {
-        header {
-            padding: 0.75rem;
-        }
-
-        .logo {
-            font-size: 1.25rem;
-        }
-
-        nav a {
-            font-size: 1rem;
-        }
-
-        main {
-            padding: 5rem 0.75rem 1.5rem;
-        }
-
-        h1 {
-            font-size: 1.8rem;
-        }
-
-        h2 {
-            font-size: 1rem;
-        }
-
-        .license-container {
-            padding: 1rem;
-            margin: 0 0.5rem 1.5rem;
-        }
-
-        pre {
-            font-size: 0.85rem;
+        body {
+            font-family: 'Roboto', sans-serif;
+            background-color: var(--background);
+            color: var(--text);
             line-height: 1.6;
         }
 
+        header {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background-color: var(--surface);
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            z-index: 1000;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 1.5rem;
+        }
+
+        nav a {
+            color: var(--text);
+            text-decoration: none;
+            font-size: 1rem;
+            transition: color 0.3s ease;
+        }
+
+        nav a:hover {
+            color: var(--primary);
+        }
+
+        main {
+            padding: 6rem 2rem 2rem;
+            max-width: 800px;
+            margin: 0 auto;
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.5s ease, transform 0.5s ease;
+        }
+
+        main.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            text-align: center;
+            margin-bottom: 0.5rem;
+        }
+
+        h2 {
+            font-size: 1.5rem;
+            text-align: center;
+            margin-bottom: 1.5rem;
+            color: #aaa;
+        }
+
+        .license-container {
+            background-color: var(--surface);
+            padding: 2rem;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+            margin-bottom: 2rem;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .license-container:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 6px 8px rgba(0, 0, 0, 0.3);
+        }
+
+        pre {
+            white-space: pre-wrap;
+            font-size: 1rem;
+            line-height: 1.8;
+            text-align: left;
+            word-wrap: break-word;
+        }
+
         .btn {
-            padding: 0.6rem 1rem;
-            font-size: 0.85rem;
-            min-width: 100px;
+            background-color: var(--primary);
+            color: var(--text);
+            padding: 0.5rem 1.5rem;
+            text-decoration: none;
+            border-radius:  ascended: 0.5rem;
+            font-size: 1rem;
+            transition: background-color 0.3s ease;
+            display: inline-block;
+            margin-top: 1rem;
+        }
+
+        .btn:hover {
+            background-color: var(--primary-dark);
         }
 
         .links-container {
-            gap: 1rem;
+            display: flex;
+            gap: 1.5rem;
+            justify-content: center;
+            margin-top: 1.5rem;
         }
 
         .links-container a {
-            font-size: 1.5rem;
+            color: var(--text);
+            font-size: 2rem;
+            transition: transform 0.3s ease, color 0.3s ease;
+        }
+
+        .links-container a:hover {
+            transform: scale(1.1);
+            color: var(--primary);
         }
 
         footer {
-            font-size: 0.75rem;
-            padding: 0.75rem;
+            background-color: var(--surface);
+            padding: 1rem;
+            text-align: center;
+            font-size: 0.8rem;
+            color: #aaa;
         }
-    }
-</style>
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @media (max-width: 768px) {
+            header {
+                flex-direction: column;
+                padding: 0.5rem;
+                gap: 1rem;
+            }
+
+            .logo {
+                font-size: 1.2rem;
+            }
+
+            nav ul {
+                flex-direction: column;
+                align-items: center;
+                gap: 0.5rem;
+            }
+
+            nav a {
+                font-size: 0.9rem;
+            }
+
+            main {
+                padding: 8rem 1rem 2rem;
+            }
+
+            h1 {
+                font-size: 2rem;
+            }
+
+            h2 {
+                font-size: 1.2rem;
+            }
+
+            .license-container {
+                padding: 1rem;
+            }
+
+            pre {
+                font-size: 0.9rem;
+            }
+
+            .links-container a {
+                font-size: 1.5rem;
+            }
+        }
+    </style>
 </head>
 <body>
     <header>
