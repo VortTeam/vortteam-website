@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VortTeam - Home</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.14.0/devicon.min.css">
+    <link rel="stylesheet" href="https://site-assets.fontawesome.com/releases/v6.7.2/css/all.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <meta name="description" content="VortTeam - Collaborative developers creating innovative projects in Rust, Python, and more">
+    <style>
+        :root {
+            --primary: hsl(215, 100%, 40%);
+            --primary-dark: hsl(215, 100%, 30%);
+            --background: #121212;
+            --surface: #1e1e1e;
+            --text: #ffffff;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Roboto', sans-serif;
+            background-color: var(--background);
+            color: var(--text);
+            line-height: 1.6;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        header {
+            position: fixed;
+            top: 0;
+            width: 50%;
+            background-color: var(--surface);
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            z-index: 1000;
+            border-radius: 8px;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+        }
+
+        .team-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            padding: 2rem;
+            margin-top: 80px;
+            perspective: 1000px;
+        }
+
+        .member-card {
+            background: var(--surface);
+            border-radius: 10px;
+            padding: 2rem;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            transform-style: preserve-3d;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            position: relative;
+        }
+
+        .member-card:hover {
+            transform: translateY(-10px) rotateX(5deg) rotateY(5deg);
+            box-shadow: 0 12px 24px rgba(0,0,0,0.2);
+        }
+
+        .member-card::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border-radius: 10px;
+            opacity: 0;
+            background: linear-gradient(45deg, var(--primary), transparent);
+            transition: opacity 0.3s ease;
+            z-index: -1;
+        }
+
+        .member-card:hover::after {
+            opacity: 0.2;
+        }
+
+        .member-header {
+            margin-bottom: 1.5rem;
+        }
+
+        .member-role {
+            color: var(--primary);
+            font-size: 0.9rem;
+        }
+
+        .member-links {
+            display: flex;
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+
+        .member-links a {
+            color: var(--text);
+            transition: color 0.3s ease;
+        }
+
+        .member-links a:hover {
+            color: var(--primary);
+        }
+
+        .projects-section {
+            padding: 2rem;
+            text-align: center;
+            opacity: 0;
+            transform: translateY(50px);
+            transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .projects-section.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .project-card {
+            background: var(--surface);
+            border-radius: 10px;
+            padding: 2rem;
+            margin: 2rem auto;
+            max-width: 600px;
+            transform: scale(0.95);
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            opacity: 0;
+            transform: translateX(-50px);
+        }
+
+        .project-card:nth-child(even) {
+            transform: translateX(50px);
+        }
+
+        .project-card.visible {
+            opacity: 1;
+            transform: translateX(0) scale(1);
+        }
+
+        .project-card:hover {
+            transform: scale(1) translateY(-5px);
+            box-shadow: 0 12px 24px rgba(0,0,0,0.2);
+        }
+
+        .btn {
+            background-color: var(--primary);
+            color: var(--text);
+            padding: 0.8rem 1.5rem;
+            text-decoration: none;
+            border-radius: 5px;
+            display: inline-block;
+            margin-top: 1rem;
+            transition: background-color 0.3s ease;
+        }
+
+        .btn:hover {
+            background-color: var(--primary-dark);
+        }
+
+        @media (max-width: 768px) {
+            .team-container {
+                grid-template-columns: 1fr;
+            }
+            
+            .project-card {
+                transform: translateX(0) scale(0.95);
+            }
+
+
+            header {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="logo">VortTeam</div>
+        <nav>
+            <a href="#team" class="btn">Team</a>
+            <a href="#projects" class="btn">Projects</a>
+        </nav>
+    </header>
+
+    <main>
+        <section id="team" class="team-container">
+            <div class="member-card">
+                <div class="member-header">
+                    <h2>PingVortex</h2>
+                    <span class="member-role">💪 Owner & Rust Developer</span>
+                </div>
+                <p>Czech student & Rust, Python, and frontend dev. Creator of VortLang.</p>
+                <div class="member-links">
+                    <a href="https://pingvortex.xyz" target="_blank" title="Personal Website">
+                        <i class="fas fa-globe"></i>
+                    </a>
+                    <a href="https://github.com/PingVortex" target="_blank" title="GitHub Profile">
+                        <i class="fab fa-github"></i>
+                    </a>
+                </div>
+            </div>
+
+            <div class="member-card">
+                <div class="member-header">
+                    <h2>aquiffoo</h2>
+                    <span class="member-role">🧠 Member & Fullstack Developer</span>
+                </div>
+                <p>Brazilian high schooler developing fullstack applications with Python, Go, and Rust. Capybara lover.</p>
+                <div class="member-links">
+                    <a href="https://aquiffoo.vercel.app/" target="_blank" title="Personal Website">
+                        <i class="fas fa-globe"></i>
+                    </a>
+                    <a href="https://github.com/aquiffoo" target="_blank" title="GitHub Profile">
+                        <i class="fab fa-github"></i>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <section id="projects" class="projects-section">
+            <h2>Projects</h2>
+            <div class="project-card">
+                <h1>VortLang</h1>
+                <p>A compiled programming language developed in Rust, focusing on performance and developer experience.</p>
+                <a href="https://github.com/VortTeam/VortLang" class="btn" target="_blank">
+                    GitHub
+                </a>
+                <a href="https://vortlang.vortteam.com/" class="btn" target="_blank">
+                    Website
+                </a>
+            </div>
+        </section>
+    </main>
+
+    <script>
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    if (entry.target.id === 'projects') {
+                        entry.target.classList.add('visible');
+                    } else if (entry.target.classList.contains('project-card')) {
+                        entry.target.classList.add('visible');
+                    } else {
+                        entry.target.style.opacity = 1;
+                        entry.target.style.transform = 'translateY(0)';
+                    }
+                }
+            });
+        }, { threshold: 0.1 });
+
+        document.querySelectorAll('.member-card, #projects, .project-card').forEach((el) => {
+            if (!el.id) el.style.opacity = 1;
+            observer.observe(el);
+        });
+    </script>
+</body>
+</html>
